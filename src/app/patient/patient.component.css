@@ -1,0 +1,35 @@
+
+h2{
+    align-items: center;
+}
+.doctor-cards {
+    margin-top: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  
+  .card-body {
+    margin-top: 10px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 5px;
+  }
+  

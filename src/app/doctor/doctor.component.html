@@ -1,0 +1,89 @@
+<h2>Doctor Management</h2>
+
+<button type="button" (click)="showAddForm()" *ngIf="!isAddFormVisible">Add New Doctor</button>
+
+<div *ngIf="isAddFormVisible">
+  <h3>Add New Doctor</h3>
+
+  <form #doctorForm="ngForm" (ngSubmit)="addDoctor()" novalidate>
+    <table>
+      <tr>
+        <td><label for="dName">Name:</label></td>
+        <td>
+          <input type="text" id="dName" [(ngModel)]="currentDoctor.dName" name="dName" required>
+          <div *ngIf="doctorForm.controls['dName'].invalid && (doctorForm.controls['dName'].dirty || doctorForm.controls['dName'].touched)">
+            <small *ngIf="doctorForm.controls['dName'].errors?.['required']">Name is required.</small>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="dSpecialization">Specialization:</label></td>
+        <td>
+          <input type="text" id="dSpecialization" [(ngModel)]="currentDoctor.dSpecialization" name="dSpecialization" required>
+          <div *ngIf="doctorForm.controls['dSpecialization'].invalid && (doctorForm.controls['dSpecialization'].dirty || doctorForm.controls['dSpecialization'].touched)">
+            <small *ngIf="doctorForm.controls['dSpecialization'].errors?.['required']">Specialization is required.</small>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="dStatus">Status:</label></td>
+        <td>
+          <input type="text" id="dStatus" [(ngModel)]="currentDoctor.dStatus" name="dStatus" required>
+          <div *ngIf="doctorForm.controls['dStatus'].invalid && (doctorForm.controls['dStatus'].dirty || doctorForm.controls['dStatus'].touched)">
+            <small *ngIf="doctorForm.controls['dStatus'].errors?.['required']">Status is required.</small>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="dAddress">Address:</label></td>
+        <td>
+          <input type="text" id="dAddress" [(ngModel)]="currentDoctor.dAddress" name="dAddress" required>
+          <div *ngIf="doctorForm.controls['dAddress'].invalid && (doctorForm.controls['dAddress'].dirty || doctorForm.controls['dAddress'].touched)">
+            <small *ngIf="doctorForm.controls['dAddress'].errors?.['required']">Address is required.</small>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="dMobileNumber">Mobile Number:</label></td>
+        <td>
+          <input type="text" id="dMobileNumber" [(ngModel)]="currentDoctor.dMobileNumber" name="dMobileNumber" required pattern="[0-9]{10}">
+          <div *ngIf="doctorForm.controls['dMobileNumber'].invalid && (doctorForm.controls['dMobileNumber'].dirty || doctorForm.controls['dMobileNumber'].touched)">
+            <small *ngIf="doctorForm.controls['dMobileNumber'].errors?.['required']">Mobile Number is required.</small>
+            <small *ngIf="doctorForm.controls['dMobileNumber'].errors?.['pattern']">Mobile Number should be a 10-digit number.</small>
+          </div>
+        </td>
+      </tr>
+      
+    </table>
+
+    <div>
+      <button type="submit" [disabled]="doctorForm.invalid || doctorForm.pristine">Add Doctor</button>
+      <button type="button" (click)="cancelAddForm()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<!-- Display the list of doctors here -->
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Specialization</th>
+    <th>Status</th>
+    <th>Address</th>
+    <th>Mobile Number</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let doctor of doctors">
+    <td>{{ doctor.dId }}</td>
+    <td>{{ doctor.dName }}</td>
+    <td>{{ doctor.dSpecialization }}</td>
+    <td>{{ doctor.dStatus }}</td>
+    <td>{{ doctor.dAddress }}</td>
+    <td>{{ doctor.dMobileNumber }}</td>
+    <td>
+      <button type="button" (click)="editDoctor(doctor)">Edit</button>
+      <button type="button" (click)="deleteDoctor(doctor.dId)">Delete</button>
+    </td>
+  </tr>
+</table>

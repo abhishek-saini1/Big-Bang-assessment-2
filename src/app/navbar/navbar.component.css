@@ -1,0 +1,25 @@
+nav{
+    background-color: rgb(34, 125, 216);
+    color: rgb(9, 56, 34);
+    height: 30px;
+
+}
+nav ul{
+    list-style: none;
+    
+
+}
+nav li{
+    display: inline-block;
+    margin-top: 5px;
+    
+   
+
+}
+
+nav ul li a{
+
+    color: rgb(247, 242, 237);
+    text-decoration: none;
+    margin-left: 20px;
+}

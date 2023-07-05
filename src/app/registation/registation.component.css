@@ -1,0 +1,54 @@
+.registration-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1; /* Set the desired background color */
+}
+
+.registration-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 90%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 16px;
+  background-color: #007bff; /* Set the desired button background color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

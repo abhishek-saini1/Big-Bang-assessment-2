@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .title {
+    text-align: center;
+  }
+  
+  .form-container {
+    text-align: center;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    display: block;
+    text-align: left;
+  }
+  
+  .input {
+    width: 300px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
